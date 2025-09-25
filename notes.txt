@@ -8,6 +8,9 @@ Invalid options object. Dev Server has been initialized using an options object 
 
 
 
+You forgot to add 'mini-css-extract-plugin' plugin (i.e. `{ plugins: [new MiniCssExtractPlugin()] }`), please read https://github.com/webpack-contrib/mini-css-extract-plugin#getting-started
+
+
 
 
 
