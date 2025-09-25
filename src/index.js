@@ -7,4 +7,9 @@ const rupesh = {
 	name: "rupesh",
 };
 
-console.log(rupesh);
+const rujith = {
+	...person,
+	name: "rujith",
+};
+
+console.log(rupesh, rujith);
