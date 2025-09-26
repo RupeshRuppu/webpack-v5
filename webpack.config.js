@@ -11,13 +11,12 @@ if (process.env.NODE_ENV === "production") {
 module.exports = {
 	mode,
 	target,
-	/* devtool: false, 'source-map' */
 	devtool: "source-map",
 
 	module: {
 		rules: [
 			{
-				test: /\.js$/,
+				test: /\.jsx?$/,
 				exclude: /node_modules/,
 				use: {
 					loader: "babel-loader",
@@ -25,9 +24,6 @@ module.exports = {
 			},
 			{
 				test: /\.(s[ac]|c)ss$/i,
-				/*
-				   test: /\.s?css$/i,
-            */
 				use: [
 					MiniCssExtractPlugin.loader,
 					"css-loader",
@@ -39,6 +35,10 @@ module.exports = {
 	},
 
 	plugins: [new MiniCssExtractPlugin()],
+
+	resolve: {
+		extensions: [".js", ".jsx"],
+	},
 
 	devServer: {
 		static: {
