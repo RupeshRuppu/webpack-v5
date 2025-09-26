@@ -2,6 +2,7 @@ const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 
 let mode = "development";
 let target = "web";
@@ -14,6 +15,8 @@ module.exports = {
 	mode,
 	target,
 	devtool: "source-map",
+
+	entry: "./src/index.js",
 
 	output: {
 		assetModuleFilename: "images/[hash][ext][query]",
@@ -56,6 +59,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: "./src/index.html",
 		}),
+		new ReactRefreshWebpackPlugin(),
 	],
 
 	resolve: {
