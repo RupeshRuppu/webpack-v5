@@ -12,7 +12,8 @@ You forgot to add 'mini-css-extract-plugin' plugin (i.e. `{ plugins: [new MiniCs
 
 
 
-
+** in past versions we need to use file-loader,url-loader to get the work done with static files import.
+but in webpack v5 we have built in way of doing this.
 
 
 
@@ -24,4 +25,10 @@ You forgot to add 'mini-css-extract-plugin' plugin (i.e. `{ plugins: [new MiniCs
 
 EXTRA:
    test: /\.s?css$/i,
-   devtool: false, 'source-map'
+   devtool: false, 'source-map' 
+   type: "asset/resource" |  "asset/inline" | "asset"
+   parser: {
+					dataUrlCondition: {
+						maxSize: 30 * 1024,
+					},
+				},
