@@ -5,7 +5,8 @@
 		"watch": "webpack --watch",
 		"build": "NODE_ENV=production webpack",
 		"build-dev": "webpack",
-		"clean": "rm -rf dist"
+		"clean": "rm -rf dist",
+		"stats": "webpack --json build-stats.json"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.28.4",
