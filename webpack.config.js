@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 let mode = "development";
 let target = "web";
@@ -64,6 +65,10 @@ module.exports = {
 
 	resolve: {
 		extensions: [".js", ".jsx"],
+	},
+
+	optimization: {
+		minimizer: [new CssMinimizerPlugin()],
 	},
 
 	devServer: {
