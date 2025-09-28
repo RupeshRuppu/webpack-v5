@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 let mode = "development";
 let target = "web";
@@ -61,6 +62,7 @@ module.exports = {
 			template: "./src/index.html",
 		}),
 		new ReactRefreshWebpackPlugin(),
+		new BundleAnalyzerPlugin(),
 	],
 
 	resolve: {
