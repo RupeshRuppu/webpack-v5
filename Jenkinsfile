@@ -3,12 +3,12 @@ pipeline {
   stages {
     stage("build") {
       steps {
-        echo "fe bundling"
+        echo "npm run build"
       }
     }
     stage("test") {
       steps {
-        echo "fe tests"
+        echo "fe test"
       }
     }
     stage("deploy") {
